@@ -1,3 +1,26 @@
+# Makefile
+
+# The MIT License (MIT)
+
+# Copyright (c) 2013 Cairoplot team
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy of
+# this software and associated documentation files (the "Software"), to deal in
+# the Software without restriction, including without limitation the rights to
+# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+# the Software, and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+# FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+# COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+# IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 BUILDDIR = build
 PYTHON_VER := $(word 1,$(wordlist 2,4,$(subst ., ,$(shell python --version 2>&1))))
 PYTHON=python
@@ -49,7 +72,7 @@ help:
 	@echo "$$HELPTEXT"
 
 include docs/Makefile
-all: build test 
+all: build test
 test: test-series
 
 build:
@@ -58,13 +81,13 @@ build:
 
 test-series:
 	@echo "»»» Testing cairoplot with the series module..."
-	@$(PYTHON) tests/series_tests.py
+	@$(PYTHON) test/series_tests.py
 
 install:
 	@echo "»»» Installing cairoplot..."
 	@$(PYTHON) setup.py install
 
-clean: 
+clean:
 	@echo "»»» Cleaning..."
 	@rm -rf $(BUILDDIR)
 
