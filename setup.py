@@ -1,22 +1,24 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 '''Cairoplot installation script.'''
 
-from distutils.core import setup
-import os
+from setuptools import setup
+
+import cairoplot
 
 setup(
-    description='Cairoplot',
+    name='cairoplot',
+    version=cairoplot.__version__,
+    url='http://rodrigoaraujo01.github.com/cairoplot/',
     license='GNU LGPL 2.1',
+    author='Rodrigo Araujo',
+    author_email='alf.rodrigo@gmail.com',
+    description='Cairoplot',
     long_description='''
         Using Python and PyCairo to develop a module to plot graphics in an
-        easy and intuitive way, creating beautiful results for presentations, 
+        easy and intuitive way, creating beautiful results for presentations,
         websites and papers.
         ''',
-    name='CairoPlot',
     packages=['cairoplot'],
-    author='Rodrigo Araujo',
-    author_email='cairoplot [at] googlegroups [dot] com',
-    url='http://rodrigoaraujo01.github.com/cairoplot/',
-    version='1.2',
-    )
-
+    platforms='any',
+    test_suite='test.test_all'
+)
