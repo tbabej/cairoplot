@@ -1,7 +1,7 @@
 #CairoPlot
 
 CairoPlot is a pure Python plotting library which uses Cairo C/Python API to
-create astonishing charts in a easy and intuitive way, perfect fot for
+create astonishing charts in a easy and intuitive way, perfect fit for
 presentations, websites and papers.
 
 It was recognized by the great aesthetics originally conceived by [Rodrigo
